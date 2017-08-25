@@ -1,0 +1,7 @@
+npm install -g truffle (and ?)
+mkdir somewhere
+cd somewhere
+truffle init webpack
+truffle compile
+truffle migrate
+npm run dev
