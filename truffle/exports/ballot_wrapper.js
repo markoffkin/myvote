@@ -24,6 +24,8 @@ class BallotWrapper {
     		return self.Ballot.deployed().then(function(instance) {
                 	ballot = instance;
       			return ballot.getWinnerName.call();
+		}).then(function(response){
+			console.log('Response:', response);
     		}).catch(function(e) {
       			console.log(e);
       			self.setStatus("Error getting winner name; see log.");

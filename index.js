@@ -28,7 +28,7 @@ app.get('/getwinner', function (request, response, next) {
     }
   */
 
-  ballot_wrapper.ballot.getWinnerName().then(function(winnerName) {
+  ballot_wrapper.getWinnerName().then(function(winnerName) {
 		response.json({winner_name: winnerName});
 	}).then(function() {next();})
 });
