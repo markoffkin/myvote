@@ -97,6 +97,6 @@ contract Ballot {
     function getWinnerName() constant
             returns (bytes32 winnerName)
     {
-        winnerName = proposals[winningProposal()].name;
+        winnerName = proposals[getWinningProposal()].name;
     }
 }
