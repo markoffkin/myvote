@@ -79,7 +79,7 @@ contract Ballot {
 
     /// @dev Computes the winning proposal taking all
     /// previous votes into account.
-    function winningProposal() constant
+    function getWinningProposal() constant
             returns (uint winningProposal)
     {
         uint winningVoteCount = 0;
@@ -94,7 +94,7 @@ contract Ballot {
     // Calls winningProposal() function to get the index
     // of the winner contained in the proposals array and then
     // returns the name of the winner
-    function winnerName() constant
+    function getWinnerName() constant
             returns (bytes32 winnerName)
     {
         winnerName = proposals[winningProposal()].name;
