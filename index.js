@@ -3,13 +3,16 @@ const express = require('express');
 
 const app = express();
 
+const BallotWrapper = require('./truffle/exports/ballot_wrapper.js')
+let ballot_wrapper = new BallotWrapper()
+
 app.get('/', function (request, response) {
   response.json({
-    name: "Valentin"
+    name: "wecome to myvote"
   })
 });
 
-app.get('/vote', function (request, response) {
+app.get('/getwinner', function (request, response, next) {
   /*
     Inside response.json(), you just pass a normal JS object
     It will be converted to a JSON and sent back
@@ -24,9 +27,10 @@ app.get('/vote', function (request, response) {
       response.json(getPerson()) will return the object back as a response
     }
   */
-  response.json({
-    name: "Kado"
-  })
+
+  ballot_wrapper.ballot.getWinnerName().then(function(winnerName) {
+		response.json({winner_name: winnerName});
+	}).then(function() {next();})
 });
 
 app.listen(4000, function () {
