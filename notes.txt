@@ -1,0 +1,38 @@
+Mining:
+https://github.com/ethereum/go-ethereum/wiki/Mining
+
+Ways to deploy a contract and call contract methods:
+https://ethereum.stackexchange.com/questions/7557/syntax-for-calling-contract-state-changing-methods
+
+How to init a struct:
+https://ethereum.stackexchange.com/questions/1511/how-to-initialize-a-struct
+
+Problem to change chain's state:
+https://ethereum.stackexchange.com/questions/10640/unable-to-add-new-struct-item-into-mapping-or-array
+
+Transaction vs Call:
+https://ethereum.stackexchange.com/questions/765/what-is-the-difference-between-a-transaction-and-a-call
+
+Scripting with geth:
+https://ethereum.stackexchange.com/questions/6652/any-way-to-execute-a-windows-linux-command-from-geth
+
+How to convert a bytes32 to string:
+https://ethereum.stackexchange.com/questions/2519/how-to-convert-a-bytes32-to-string
+
+Order of actions with geth:
+http://www.ziggify.com/blog/blockchain-stack-1-installing-ethereum-geth-smart-contract/
+
+Managing accounts:
+https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts
+
+Push not working:
+https://ethereum.stackexchange.com/questions/3511/2-mapped-structs-with-an-address-array-push-not-working
+
+Solidity FAQ:
+http://solidity.readthedocs.io/en/develop/frequently-asked-questions.html
+
+On Chain Chess:
+https://github.com/ise-ethereum/on-chain-chess/blob/develop/contract/Auth.sol
+
+101 noob intro to smart contracs:
+https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4

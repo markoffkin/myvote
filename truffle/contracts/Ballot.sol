@@ -62,14 +62,14 @@ contract Ballot {
         voters[voter].canVote = canVote;
     }
 
-    /// Give your vote (including votes delegated to you)
-    /// to proposal `proposals[proposal].name`.
+    /// Give your vote to `proposals[proposal]`.
     function vote(uint proposal) {
         Voter storage sender = voters[msg.sender];
         require(!sender.voted);
         require(!sender.canVote);
         sender.voted = true;
         sender.vote = proposal;
+        sender.canVote = false;
 
         // If `proposal` is out of the range of the array,
         // this will throw automatically and revert all
@@ -99,4 +99,33 @@ contract Ballot {
     {
         winnerName = proposals[getWinningProposal()].name;
     }
+
+
+    function getDescription() constant returns (string desc)
+    {
+        desc = proposalDescription;
+    }
+
+    function getProposalName(uint8 proposalNumber) constant returns (bytes32 propName)
+    {
+        propName = proposals[proposalNumber].name;
+    }
+
+    function getProposalVoteCount(uint8 proposalNumber) constant returns (uint cnt)
+    {
+        cnt = proposals[proposalNumber].voteCount;
+    }
+
+    function canMeVote() constant returns (bool canVote)
+    {
+        Voter storage sender = voters[msg.sender];
+        canVote = sender.canVote;
+    }
+
+    function hasMeVoted() constant returns (bool hasVoted)
+    {
+        Voter storage sender = voters[msg.sender];
+        hasVoted = sender.voted;
+    }
 }
+
